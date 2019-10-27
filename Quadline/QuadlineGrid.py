@@ -19,9 +19,16 @@ class QuadlineGrid:
                 temp_grid.append(" ")
             self.grid.append(temp_grid)
 
-    def get_grid(self):
-        return self.grid    # should be changed to return later
+    def get_grid(self) - > List[List[chr]]:
+        return self.grid 
 
+
+    def token_drop(grid,length,width, token):
+                grid[length][width] = token
+
+    
+    def vaild_location(grid, length):
+        return grid [5][width] == 0 
 
 
 
