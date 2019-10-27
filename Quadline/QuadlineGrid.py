@@ -2,33 +2,26 @@ from typing import List
 
 
 class QuadlineGrid:
-    length: int
-    width: int
-    grid: List[List[chr]]   # can change to string if needed
+    col: int
+    row: int
+    grid: List[List[str]]   # can change to string if needed
 
     def __init__(self) -> None:
-        self.length = 7
-        self.width = 6
+        self.row = 6
+        self.col = 7
         self.grid = []
 
-        x = 0
-        y = 0
-        for y in range(self.width):
+        for y in range(self.row):
             temp_grid = []
-            for x in range(self.length):
+            for x in range(self.col):
                 temp_grid.append(" ")
             self.grid.append(temp_grid)
 
-    def get_grid(self) - > List[List[chr]]:
-        return self.grid 
+    def get_grid(self) -> List[List[str]]:
+        return self.grid
 
+    def drop_token(self, length, width, token):
+        self.grid[length][width] = token
 
-    def token_drop(grid,length,width, token):
-                grid[length][width] = token
-
-    
-    def vaild_location(grid, length):
-        return grid [5][width] == 0 
-
-
-
+    def valid_location(self, col) -> bool:
+        return self.grid[0][col] == " "
